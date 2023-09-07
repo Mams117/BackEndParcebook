@@ -4,32 +4,16 @@ const cors = require("cors");
 
 const app = express();
 const puerto = 3900;
+
+//conexion base de datos
+
+const conexion = require("./model/Conexion");
+conexion();
 //middleware :servicios comunes para la aplicacion ayuda en la construccion
 
 app.use(cors()); //acepta llamadas de url no conocidas
 app.use(express.json()); //permite intercambiar en formato JSON
-
-//rutas
-
-/* app.get("/", (req, res) => {
-  //console.log("ruta base");
-  return res.status(200).send(`<h1> bienvenido al backend de parcebook</h1>
-  <ul>
-  <li>javaScript</li>
-  <li>Php</li>
-  <li>Phyton</li>
-  </ul>
-  `);
-});
-
-app.get("/clientes", (req, res) => {
-  return res.status(200).send({
-    id: 230,
-    nombre: "mario",
-    estado: true,
-    edad: 20,
-  });
-}); */
+app.use(express.urlencoded({ extended: true }));
 
 //instanciamos las rutas por controlador
 const aprendiz = require("./routes/aprendiz");

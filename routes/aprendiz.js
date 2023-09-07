@@ -3,18 +3,12 @@ const express = require("express");
 const router = express.Router();
 
 const aprendizControlador = require("../controller/Aprendiz");
-const clientesControlador = require("../controller/clientes");
 
 //rutas con la logica del controlador
-
-router.get("/aprendiz/Crear", aprendizControlador.Crear);
-router.delete("/aprendiz/Borrar", aprendizControlador.Borrar);
+router.get("/aprendiz/listarTodos", aprendizControlador.listarTodos);
+router.get("/aprendiz/listarUno/:id", aprendizControlador.listarUno);
+router.post("/aprendiz/Crear", aprendizControlador.Crear);
+router.delete("/aprendiz/eliminarUno/:id", aprendizControlador.eliminarUno);
 router.put("/aprendiz/Actualizar", aprendizControlador.Actualizar);
-router.put("/aprendiz/Consultar", aprendizControlador.Consultar);
-
-router.get("/clientes/Crear", clientesControlador.Crear);
-router.delete("/clientes/Borrar", clientesControlador.Borrar);
-router.put("/clientes/Actualizar", clientesControlador.Actualizar);
-router.put("/clientes/Consultar", clientesControlador.Consultar);
 
 module.exports = router;
