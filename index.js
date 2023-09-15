@@ -17,10 +17,12 @@ app.use(express.urlencoded({ extended: true }));
 
 //instanciamos las rutas por controlador
 const aprendiz = require("./routes/aprendiz");
+const usuarioRuta = require("./routes/usuario");
 
 //usar las rutas de acuerdo al controlador
 
 app.use("/api", aprendiz);
+app.use("/api", usuarioRuta);
 
 //activamos el servidor del backEnd
 app.listen(puerto, () => {

@@ -9,6 +9,6 @@ router.get("/aprendiz/listarTodos", aprendizControlador.listarTodos);
 router.get("/aprendiz/listarUno/:id", aprendizControlador.listarUno);
 router.post("/aprendiz/Crear", aprendizControlador.Crear);
 router.delete("/aprendiz/eliminarUno/:id", aprendizControlador.eliminarUno);
-router.put("/aprendiz/Actualizar", aprendizControlador.Actualizar);
+router.put("/aprendiz/Actualizar/:id", aprendizControlador.Actualizar);
 
 module.exports = router;
